@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<style>
+    body, html {
+        margin: 0px;
+        padding: 0px;
+    }    
+    #wrapper {
+        background: #999;
+        width: 640px;
+        margin: 20px auto;
+        padding: 25px;
+    }
+
+    #wrapper input {
+        float: right;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+/*
+A parking garage charges $2.0 minimum fee to park for up to three hours. The garage charges an additional $0.50 per 
+hour for each hour or part thereof in excess of three hours. The maximum charge for any given 24-hour period is $10.00.
+Assume that no car parks for longer than 24 hours at a time. Write a program that calculates and displays the parking 
+charges for each customer who parked in the garage yesterday. 
+
+For example, if the user inputs 12 hours, your program displays the total charge of $6.5
+
+*/
+
+//Write code here to solve the problem
+
+function calculateFee() {
+    var hours = $("#hours").val();
+    var fee = 2.0;
+    if (hours > 3) {
+        fee += (hours - 3) * 0.5;
+    }
+    if (fee > 10) {
+        fee = 10;
+    }
+    $("#fee").val("$" + fee.toFixed(2));
+}
+
+function reset() {
+    $("#hours").val(1);
+    $("#fee").val("$2.00");
+}
+
+
+
+</script>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Parking Garage</h1>
+        <p>
+            <b>Hours Parked:</b>
+            <input type="number" id="hours" value="1"/>
+        </p>
+        <p>
+            <b>Parking Fee:</b>
+            <input type="text" id="fee" value="$2.00" readonly="readonly"/>
+        </p>
+        <p>
+            <input type="button" value="Calculate Fee" onclick="calculateFee()"/>
+            <input type="button" value="Reset" onclick="reset()"/>
+        </p>
+    </div>
+
+
+
+
+</body>
+</html>

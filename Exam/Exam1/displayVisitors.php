@@ -25,5 +25,5 @@ else{
 }
 
 
-echo "<p><a href=\"Exam1%20Pt.2.php\">Add Guest</a></p>\n";
+echo ">Add Guest</a></p>\n";
 ?>

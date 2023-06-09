@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Looping Programming Structure</title>
+</head>
+<body>
+
+    <div style="text-align: center;"><h3>Tuition Calculator</h3></div>
+
+    <script>
+
+        let tuition = 10000;
+        let year = 1;
+        let increase = 0.05;
+        let newTuition = 0;
+        let totalTuition = 0;
+        let totalIncrease = 0;
+
+        document.writeln("Year \xA0\xA0\xA0\xA0 Tuition");
+        document.writeln("<br>");
+        document.writeln("-------------------");
+        document.writeln("<br>");
+        for(let i = 1; i <= 10; i++){
+            newTuition = tuition + (tuition * increase);
+            totalTuition += newTuition;
+            totalIncrease += (newTuition - tuition);
+            document.writeln("Year " + year + "\xA0\xA0 Tuition: " + newTuition);
+            document.writeln("<br>");
+            year++;
+            tuition = newTuition;
+        }
+        document.writeln("<br>\<br>\Total Tuition: " + totalTuition);
+        document.writeln("<br>\<br>\Total Increase: " + totalIncrease);
+
+    </script>
+
+</body>
+</html>

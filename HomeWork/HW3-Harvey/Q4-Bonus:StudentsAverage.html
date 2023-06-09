@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students Averages</title>
+</head>
+<body>
+
+    <div style="text-align: center;"><h3>Students Average Calculator</h3></div>
+
+    <Script>
+
+        let studentAverage = 0;
+        let studentAverageArray = [];
+        let studentAverageArrayLength = 0;
+
+        //Loop to allow user to input as many students as they want
+        while(studentAverage != -1){
+            studentAverage = parseFloat(window.prompt("Enter a student's average (Enter -1 to terminate the program): ", ""));
+            //if student average is not a number don't accept it
+            if(isNaN(studentAverage)){
+                alert("Invalid Input, please restart and try again");
+                continue;
+            }else{
+                studentAverageArray.push(studentAverage);
+            }
+        }
+        //if student's average = -1 then remove it from the array
+        if(studentAverageArray[studentAverageArray.length - 1] == -1){
+            studentAverageArray.pop();
+        }
+
+        //Loop through the array and display the student's average
+        studentAverageArrayLength = studentAverageArray.length;
+        for(let i = 0; i < studentAverageArrayLength; i++){
+            if(studentAverageArray[i] >= 90 && studentAverageArray[i] <= 100){
+                document.writeln("<br><br>Student " + (i+1) + " average is: " + studentAverageArray[i] + " and the grade is: 4");
+            }else if(studentAverageArray[i] >= 80 && studentAverageArray[i] <= 89){
+                document.writeln("<br><br>Student " + (i+1) + " average is: " + studentAverageArray[i] + " and the grade is: 3");
+            }else if(studentAverageArray[i] >= 70 && studentAverageArray[i] <= 79){
+                document.writeln("<br><br>Student " + (i+1) + " average is: " + studentAverageArray[i] + " and the grade is: 2");
+            }else if(studentAverageArray[i] >= 60 && studentAverageArray[i] <= 69){
+                document.writeln("<br><br>Student " + (i+1) + " average is: " + studentAverageArray[i] + " and the grade is: 1");
+            }else if(studentAverageArray[i] < 60){
+                document.writeln("<br><br>Student " + (i+1) + " average is: " + studentAverageArray[i] + " and the grade is: 0");
+            }
+        }
+
+
+    </Script>
+
+</body>
+</html>

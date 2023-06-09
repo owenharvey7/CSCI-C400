@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset = "utf-8" />
+  <title>Cliff Hangers</title>
+  <link href="cliff.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="//code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+
+  <script>
+    $( function() {
+      $( document ).tooltip();
+    } );
+  </script>
+</head>
+<body>
+
+<div id="container">
+
+  <div id="logo">
+    <p><img src="media\chlogo.png" alt="Cliff Hangers Climbing School" width="580" height="100" /></p>
+  </div>
+
+  <div id="nav">
+    <table>
+      <tr>
+        <td> <a title = "Go to the Home Page" href="index.html">Home</a></td>
+        <td> <a title = "Lessons we are currently offering" href="lessons.html">Lessons</a> </td>
+        <td><a title = "Check out our different climbing tours" href="tours.html">Tours</a> </td>
+        <td><a title = "Learn more about our staff" href="staff.html">Staff</a> </td>
+        <td><a title = "Take a survey for more information" href="survey.html">Survey</a> </td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="content">
+    <h1>Survey Form</h1>
+    <p>Contact us today for more information about Cliff Hangers and to schedule
+      a tour. Required information is indicated by an asterisk (*).
+    </p>
+
+    <form id="survey" name="survey"
+          action="http://www.cliffhangerschool.com/survey"
+          method="post">
+
+      <table>
+        <tr>
+            <td>  <label for="custname">Name *</label>  </td>
+            <td> <input name="custname" id="custname" size="40"/> </td>
+
+            <tr><td></td><td></td></tr><tr><td></td><td></td></tr>
+            <tr>
+              <td>      <label for="email">E-mail *</label> </td>
+              <td>    <input name="email" id="email" type="email" size="40"/> </td>
+            </tr>
+            <tr><td></td><td></td></tr><tr><td></td><td></td></tr>
+            <tr>
+          <td>   <label>I'm interested in:</label> </td>
+          <td>
+            <label for= "lessons">Lessons only</label>
+            <input type="radio" name="custType" id="lessons"
+                   value="lessons" />
+            <label for= "tours">Tours only</label>
+            <input type="radio" name="custType" id="tours"
+                   value="tours" />
+            <label for= "both">Both</label>
+            <input type="radio" name="custType" id="both"
+                   value="both" />
+          </td>
+        </tr>
+        <tr><td></td><td></td></tr><tr><td></td><td></td></tr>
+        <tr>
+          <td>      <label for= "comments">Your climbing goals</label></td>
+          <td>     <textarea name="comments" id="comments" rows="5" cols="40"></textarea></td>
+        </tr>
+        <tr><td></td><td></td></tr><tr><td></td><td></td></tr>
+        <tr>
+          <td>         <input type="submit" value="Submit" />
+            <input type="reset" value="Cancel" />
+          </td>
+        </tr>
+        <tr><td></td><td></td></tr><tr><td></td><td></td></tr>
+      </table>
+
+    </form>
+
+  </div>
+
+</div>
+</body>
+</html>

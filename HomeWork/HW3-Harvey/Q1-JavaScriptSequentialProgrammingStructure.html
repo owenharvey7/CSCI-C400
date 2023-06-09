@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sequential Programming Structure</title>
+</head>
+<body>
+
+    <div style="text-align: center;"><h3>Calorie Burning Calculator</h3></div>
+
+    <script>
+
+        let total_calories;
+        let bicycling = - 1;
+        let jogging = -1;
+        let swimming = -1;
+        let total_pounds;
+        let total_hours;
+
+
+        while (bicycling < 0) {
+            bicycling = parseFloat(window.prompt("Enter the number of hours spent bicycling: ", ""));
+            if(bicycling < 0) {
+                alert("Cannot be a negative number");
+                continue;
+            }
+        }
+        while (jogging < 0) {
+            jogging = parseFloat(window.prompt("Enter the number of hours spent jogging: ", ""));
+            if(jogging < 0) {
+                alert("Cannot be a negative number");
+                continue;
+            }
+
+        }
+        while (swimming < 0) {
+            swimming = parseFloat(window.prompt("Enter the number of hours spent swimming: ", ""));
+            if(swimming < 0) {
+                alert("Cannot be a negative number");
+                continue;
+            }
+        }
+
+        total_hours = bicycling + jogging + swimming;
+
+        total_calories = (bicycling * 200) + (jogging * 475) + (swimming * 275);
+
+        total_pounds = total_calories / 3500;
+
+        total_pounds = total_pounds.toFixed(2);
+
+        document.writeln("<br><br>The total number of hours spent biking is: " + bicycling);
+        document.writeln("<br><br>The total number of hours spent jogging is: " + jogging);
+        document.writeln("<br><br>The total number of hours spent swimming is: " + swimming);
+        document.writeln("<br><br>The total number of calories burned is: " + total_calories);
+        document.writeln("<br><br>The total number of pounds lost is: " + total_pounds);
+        document.writeln("<br><br>The total number of hours spent exercising is: " + total_hours);
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript  Decision Programming Structure</title>
+</head>
+<body>
+
+    <div style="text-align: center;"><h3>Calendar Calculator</h3></div>
+
+    <script>
+        let day = -1;
+        while(day < 1 || day > 31){
+            day = parseFloat(window.prompt("Enter a number between 1-31: ", ""));
+            if(day < 1 || day > 31)
+            alert("Invalid Input, please enter a number between 1-31");
+            continue;
+        }
+        if(day >= 1 && day <= 10){
+            document.writeln("It is Day " + day);
+            document.writeln("<br>");
+            document.writeln("It is early in the month");
+        }
+        else if(day >= 11 && day <= 20){
+            document.writeln("It is Day " + day);
+            document.writeln("<br>");
+            document.writeln("It is middle of the month");
+        }
+        else if(day >= 21 && day <= 31){
+            document.writeln("It is Day " + day);
+            document.writeln("<br>");
+            document.writeln("It is the end of the month");
+        }
+
+    </script>
+
+</body>
+</html>

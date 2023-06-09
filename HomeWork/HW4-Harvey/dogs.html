@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<!-- Online Dog types quiz graded with JavaScript. -->
+
+<html>
+<head>
+   <meta charset = "utf-8" />
+   <title>Dog Types Quiz</title>
+
+</head>
+<body>
+<script>
+   function checkAnswers() {
+      let dog1 = document.getElementsByName("dog1");
+      let dog2 = document.getElementsByName("dog2");
+
+      let dog1Answer = null;
+      let dog2Answer = null;
+
+      for (let i = 0; i < dog1.length; i++) {
+         if (dog1[i].checked) {
+            dog1Answer = dog1[i].id;
+         }
+      }
+
+      for (let i = 0; i < dog2.length; i++) {
+         if (dog2[i].checked) {
+            dog2Answer = dog2[i].id;
+         }
+      }
+
+      if (dog1Answer === null || dog2Answer === null) {
+         alert("Please answer both questions!");
+         return;
+      }
+
+      if (dog1Answer === "akita") {
+         document.getElementById("dog1Result").innerHTML = "Correct, Good Job!";
+         document.getElementById("dog1Result").style.color = "green";
+      } else {
+         document.getElementById("dog1Result").innerHTML = "Wrong Answer!";
+         document.getElementById("dog1Result").style.color = "red";
+      }
+
+      if (dog2Answer === "beagle") {
+         document.getElementById("dog2Result").innerHTML = "Correct, Good Job!";
+         document.getElementById("dog2Result").style.color = "green";
+      } else {
+         document.getElementById("dog2Result").innerHTML = "Wrong Answer!";
+         document.getElementById("dog2Result").style.color = "red";
+      }
+   }
+
+   function resetAnswers() {
+      let dog1 = document.getElementsByName("dog1");
+      let dog2 = document.getElementsByName("dog2");
+
+      for (let i = 0; i < dog1.length; i++) {
+         dog1[i].checked = false;
+      }
+
+      for (let i = 0; i < dog2.length; i++) {
+         dog2[i].checked = false;
+      }
+
+      document.getElementById("dog1Result").innerHTML = "";
+      document.getElementById("dog1Result").style.color = "black";
+      document.getElementById("dog2Result").innerHTML = "";
+      document.getElementById("dog2Result").style.color = "black";
+   }
+</script>
+
+
+         <h1>Dog Types Quiz</h1>
+<form id = "dogQuiz" action = "http://www.bing.com">
+   <p style="color:#9C5959; font-weight:bold;">Select the correct type of the dog that goes with the image:</p>
+   <p><strong>Dog 1:</strong><br />
+      <img src="dog1.jpg" alt="mystery dog"/>
+      <br />
+      <input type = "radio" name = "dog1" id = "akita" />
+      <label>Akita</label>
+
+      <input type = "radio" name = "dog1" id = "bloodhound" />
+      <label>Bloodhound</label>
+
+      <input type = "radio" name = "dog1" id = "borzoi" />
+      <label>Borzoi</label>
+
+      <input type = "radio" name = "dog1" id = "affenpinscher" />
+      <label>Affenpinscher</label>
+
+      <p><span id = "dog1Result"></span></p>
+
+   </p>
+
+   <p><strong>Dog 2:</strong><br />
+      <img src="dog2.jpg" alt="mystery dog"/>
+      <br />
+
+      <input type = "radio" name = "dog2" id = "basenji" />
+      <label>Basenji</label>
+
+      <input type = "radio" name = "dog2" id = "bostonterrier" />
+      <label>Boston Terrier</label>
+
+      <input type = "radio" name = "dog2" id = "boxer" />
+      <label>Boxer</label>
+
+      <input type = "radio" name = "dog2" id = "beagle" />
+      <label>Beagle</label>
+
+      <p><span id = "dog2Result"></span></p>
+
+   </p>
+   <input type = "button" value = "Check My Answers!" onclick = "checkAnswers()" />
+   <input type = "reset" name = "reset" value = "Reset" onclick = "resetAnswers()" />
+
+</form>
+</body>
+</html>

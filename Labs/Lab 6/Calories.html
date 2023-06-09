@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Calorie Calculator</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+  <script type="text/javascript">
+
+    function Bicycle() {
+      this.caloriesPerHour = 200;
+    }
+
+    function Jogging() {
+      this.caloriesPerHour = 475;
+    }
+
+    function Swimming() {
+      this.caloriesPerHour = 275;
+    }
+
+    function caloriesBurned(activity, hours) {
+      return activity.caloriesPerHour * hours;
+    }
+
+    function poundsLost(calories) {
+      return calories / 3500;
+    }
+
+    function calculate() {
+      // create objects
+      var bicycling = new Bicycle();
+      var jogging = new Jogging();
+      var swimming = new Swimming();
+
+      //get hours
+      var hoursBicycling = document.getElementById("bicycling").value;
+      var hoursJogging = document.getElementById("jogging").value;
+      var hoursSwimming = document.getElementById("swimming").value;
+
+      //find calories burned
+      var caloriesBicycling = caloriesBurned(bicycling, hoursBicycling);
+      var caloriesJogging = caloriesBurned(jogging, hoursJogging);
+      var caloriesSwimming = caloriesBurned(swimming, hoursSwimming);
+
+      //find calories burned
+
+
+      //find total calories
+      var totalCalories = (caloriesBicycling + caloriesJogging + caloriesSwimming).toFixed(2);
+
+      //find total pounds to the 2nd decimal place
+      var totalPounds = poundsLost(totalCalories).toFixed(2);
+
+
+      document.getElementById("calories_burned").value = totalCalories;
+      document.getElementById("pounds_lost").value = totalPounds;
+    }
+
+    window.onload = function() {
+      var button = document.getElementsByTagName("input")[3];
+      button.onclick = calculate;
+    }
+
+
+
+
+
+  </script>
+  <form method="post">
+    <table >
+  <tr>
+    <th colspan="2">Calorie Calculator</th>
+  </tr>
+  <tr>
+    <td>Bicycling</td>
+    <td><input id="bicycling" type="text" /> hours
+    </td>
+  </tr>
+  <tr>
+    <td>Jogging</td>
+    <td><input id="jogging" type="text" /> hours
+    </td>
+  </tr>
+  <tr>
+    <td>Swimming</td>
+    <td><input id="swimming" type="text" /> hours
+    </td>
+  </tr>
+  <tr>
+    <td class="submitfield">
+      <div class="submitbutton">
+        <input type="button" value="Calculate" />
+      </div>
+    <td class="submitfield">
+      <div class="submitbutton">
+        <input type="reset" value="Reset" />
+      </div>
+	</td>
+   </tr>
+   <tr>
+    <td>
+      <input type="text" id="calories_burned" readonly/> calories burned
+	</td>
+	<td>
+	  <input type="text" id="pounds_lost" readonly/> pounds_lost
+    </td>
+   </tr>
+</table>
+</form>
+
+</body>
+</html>

@@ -33,6 +33,7 @@ try {
 catch (PDOException $e){
     throw new PDOException($e->getMessage(), (int)$e->getCode());
 }
+
 $firstName = "";
 $firstName_error = "";
 $lastName = "";
@@ -73,8 +74,8 @@ if (isset($_POST['addVisitor'])) {
 if ($displayForm == true) {
 
 ?>
-<p>Use the following form to add a visitor to the database:</p>
-<form action="Exam1Pt.22.php" method="post">
+<h2>Use the following form to add a visitor to the database:</h2>
+<form action="Exam1 Pt.2.php" method="post">
     <p>
         <label for="firstName">First Name:</label>
         <input type="text" name="firstName" id="firstName" value="<?php echo $firstName; ?>" />
@@ -88,11 +89,11 @@ if ($displayForm == true) {
     <p>
         <input type="submit" name="addVisitor" value="Add Visitor" />
     </p>
-<?php
-}
+    <?php
+    }
 
-echo "<p><a href=\"displayVisitors.php\">View Guest Book</a></p>\n";
-?>
+    echo ">View Guest Book</a></p>\n";
+    ?>
 </body>
 </html>
 
